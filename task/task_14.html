@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+   <meta charset="UTF-8">
+   <meta http-equiv="X-UA-Compatible" content="IE=edge">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <title>Task 14</title>
+   <style>
+
+   </style>
+</head>
+
+<body>
+   <a href="../index.html">Повернутись до задач</a>
+   <p> 14.Каса. Користувачу повідомляють суму, яку йому треба сплатити. Користувач поступово вводить суму грошей до тих пір, поки суми не буде достатньо для оплати товарів (кожного разу користувачу повідомляють, яку ще суму потрібно ввести).</p>
+   <script>
+      const sum = 100 + Math.floor(Math.random() * 1000);
+      let paid = 0;
+      let result = 'Ви успішно все сплатили!';
+      do {
+         const userNumb = parseFloat(prompt(`Введіть сумму до сплати. Загальна сумма складає ${sum}. Ви сплатили ${paid}. Залишилось: ${sum - paid}`));
+         paid += userNumb
+         if (sum - paid > 0) {
+            const userAnswer = confirm(`Успішна оплата! Бажаєте внести ще кошти?`)
+            if (userAnswer) continue
+            else {
+               result = `В вас недостача: ${sum - paid}`
+               break
+            }
+         }
+      }
+      while (paid < sum)
+      document.write(paid > sum ? `Ви переплатили: ${paid - sum}` : result)
+   </script>
+</body>
+
+</html>

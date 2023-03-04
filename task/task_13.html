@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+   <meta charset="UTF-8">
+   <meta http-equiv="X-UA-Compatible" content="IE=edge">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <title>Task 13</title>
+   <style>
+
+   </style>
+</head>
+
+<body>
+   <a href="../index.html">Повернутись до задач</a>
+   <p> 13.Морський бій. Комп’ютер випадково розташовує одиночний корабель на полі розміром N*M. Маючи К снарядів користувач намагається потопити корабель.</p>
+   <script>
+      const row = parseInt(prompt('Введіть N'))
+      const column = parseInt(prompt('Введіть M'))
+      const shotNumber = parseInt(prompt('Введіть K'))
+      const placeShipRow = 1 + Math.floor(Math.random() * row)
+      const placeShipColumn = 1 + Math.floor(Math.random() * column)
+      let gameResult = `Ви не вгадали. Корабель знаходився на позиції ${placeShipRow} по вертикалі, ${placeShipColumn} по горизонталі`;
+      let i = 1;
+      do {
+         const userShotRow = parseInt(prompt(`Оберіть число від 1 до ${row}, для пострілу по горизонталі`))
+         const userShotColumn = parseInt(prompt(`Оберіть число від 1 до ${column}, для пострілу по вертикалі`))
+         if (userShotRow === placeShipRow && userShotColumn === placeShipColumn) {
+            gameResult = 'Ви виграли!';
+            break;
+         }
+         else alert(`Залишилось ${shotNumber - i} спроб`)
+         i++;
+      } while (i <= shotNumber)
+      document.write(gameResult);
+   </script>
+</body>
+
+</html>

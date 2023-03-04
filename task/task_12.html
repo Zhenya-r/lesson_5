@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+   <meta charset="UTF-8">
+   <meta http-equiv="X-UA-Compatible" content="IE=edge">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <title>Task 12</title>
+   <style>
+
+   </style>
+</head>
+
+<body>
+   <a href="../index.html">Повернутись до задач</a>
+   <p> Задача 12. Ігровий автомат. Випадково вибираємо зображення у 3 позиціях. Вибір у кожній позиції вибирається як одне з чотирьох зображень. Вивести ці зображення і повідомити виграш користувача (три перших зображення 100 грн, три других – 200, три третіх – 500, три четвертих зображення – 1000грн). Використати цикли і switch (для вибору зображення за номером).</p>
+   <script>
+      let combination = '';
+      let result = 0;
+      document.write(`<ul style="display:flex; column-gap:40px">`)
+      for (let i = 0; i < 3; i++) {
+         let pictures = 1 + Math.floor(Math.random() * 4);
+         switch (pictures) {
+            case 1:
+               document.write(`<li>Банан</li>`)
+               break;
+            case 2:
+               document.write(`<li>Вишня</li>`)
+               break;
+            case 3:
+               document.write(`<li>Ананас</li>`)
+               break;
+            case 4:
+               document.write(`<li>Лимон</li>`)
+               break;
+         }
+         combination += pictures;
+      }
+      document.write(`</ul>`)
+      switch (combination) {
+         case '111':
+            result = 100;
+            break;
+         case '222':
+            result = 200;
+            break;
+         case '333':
+            result = 300;
+            break;
+         case '444':
+            result = 400;
+            break;
+      }
+      document.write(`Ваш виграш складає ${result} грн`)
+   </script>
+</body>
+
+</html>

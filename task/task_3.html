@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+   <meta charset="UTF-8">
+   <meta http-equiv="X-UA-Compatible" content="IE=edge">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <title>Task 3</title>
+   <style>
+      table {
+         border: 2px solid #000;
+      }
+
+      td {
+         border: 1px solid #000;
+      }
+   </style>
+</head>
+
+<body>
+   <a href="../index.html">Повернутись до задач</a>
+   <p>Задача 3. Вивести таблицю з одним рядком і 7 стовпцями.</p>
+   <script>
+      const column = 7;
+      document.write(`<table><tr>`)
+
+      for (let i = 1; i <= column; i++) {
+         document.write(`<td>${i}</td>`)
+      }
+      document.write(`</tr></table>`)
+   </script>
+</body>
+
+</html>

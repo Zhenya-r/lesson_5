@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+   <meta charset="UTF-8">
+   <meta http-equiv="X-UA-Compatible" content="IE=edge">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <title>Task 11</title>
+   <style>
+
+   </style>
+</head>
+
+<body>
+   <a href="../index.html">Повернутись до задач</a>
+   <p> Задача 11. Знайти суму 5 непарних чисел, що знаходяться між заданими користувачем числами.</p>
+   <script>
+      const startCounter = parseInt(prompt('Введіть початок відліку чисел'))
+      const endCounter = parseInt(prompt('Введіть кінець відліку чисел'))
+      let sumNumb = 0;
+      let counter = 0;
+      for (let i = startCounter; i <= endCounter && counter < 5; i++) {
+         if (i % 2 !== 0) {
+            sumNumb += i;
+            counter++;
+         }
+      }
+      document.write(`Сумма = ${sumNumb}`)
+   </script>
+</body>
+
+</html>
